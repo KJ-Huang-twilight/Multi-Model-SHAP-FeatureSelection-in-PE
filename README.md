@@ -9,11 +9,11 @@ The 20 independent machine learning model training scripts. Each script performs
 
 ### Feature Importance Output Formats: 
 
-- **Dual Output (Model-intrinsic + SHAP).py**
+- **Dual output (Model-intrinsic + SHAP).py**
 
   Scripts 01 through 12 (Random Forest, Gradient Boosting Trees, XGBoost, LightGBM, CatBoost, NGBoost, Extremely Randomized Trees, Oblique Random Forest, Logistic Regression, Lasso Regression, Ridge Regression, ElasticNetCV) output both their native feature importance rankings (e.g., feature_importances_, coefficients) and the SHAP-based importance rankings (SHAP-TreeExplainer or LinearExplainer).
 
-- **SHAP-only Output.py**
+- **SHAP-only output.py**
 
   Scripts 13 through 20 (MLP, DNN, SVM, Bayes, GPC, KNN, TPOT, ANN) output only the SHAP-based importance rankings (utilizing SHAP-DeepExplainer or KernelExplainer), as they do not provide native, directly comparable feature importance metrics.
 
@@ -26,7 +26,7 @@ The rank aggregation script. It computes the consensus ranking for features by c
 
 ### Rank_intersect.py
 
-The final core gene discovery script. It takes the top 100 genes from the "Model-intrinsic consensus ranking" and the "SHAP-based consensus ranking", identifies their intersection, and re-ranks the overlapping genes by their combined average rank to determine the final disease-associated core gene set.
+The final core gene discovery script. It takes the top 100 genes from the **"Model-intrinsic consensus ranking"** and the **"SHAP-based consensus ranking"**, identifies their intersection, and re-ranks the overlapping genes by their combined average rank to determine the final disease-associated core gene set.
 
 ## Notes
 - This repository contains only the Python implementation of the machine learning and feature ranking pipeline. Downstream analyses (such as single-cell RNA-seq, deconvolution, and clinical model validation) are performed using R as detailed in the manuscript.
